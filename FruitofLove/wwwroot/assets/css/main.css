@@ -1711,6 +1711,318 @@ section,
   color: var(--contrast-color);
 }
 
+/*--------------------------------------------------------------
+# Corporate Overview Section
+--------------------------------------------------------------*/
+.corporate-overview .overview-item {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.corporate-overview .overview-item:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.corporate-overview .overview-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.corporate-overview .overview-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.corporate-overview .overview-item ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/*--------------------------------------------------------------
+# Strategic Objectives Section
+--------------------------------------------------------------*/
+.objectives .objective-card {
+  background: var(--surface-color);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.objectives .objective-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.objectives .objective-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--heading-color);
+}
+
+.objectives .objective-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Key Operations & Divisions Section
+--------------------------------------------------------------*/
+.operations .operation-box {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.operations .operation-box:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.operations .operation-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+}
+
+.operations .operation-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.operations .operation-box ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--default-color);
+}
+
+.operations .operation-box ul li strong {
+  color: var(--heading-color);
+}
+
+/*--------------------------------------------------------------
+# Compliance & Certifications Section
+--------------------------------------------------------------*/
+.compliance .compliance-item {
+  background: var(--surface-color);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  height: 100%;
+}
+
+.compliance .compliance-item:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.compliance .compliance-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 8px;
+}
+
+.compliance .compliance-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--heading-color);
+}
+
+.compliance .compliance-item p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 5px 0;
+  color: var(--default-color);
+}
+
+.compliance .compliance-item p:first-child {
+  margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# Track Record & Clients Section
+--------------------------------------------------------------*/
+.track-record .track-box {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.track-record .track-box:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.track-record .track-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--heading-color);
+}
+
+.track-record .track-box p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--default-color);
+}
+
+.track-record .track-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-record .track-box ul li {
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--default-color);
+}
+
+.track-record .track-box ul li strong {
+  color: var(--heading-color);
+}
+
+/*--------------------------------------------------------------
+# Quality Assurance & M&E Section
+--------------------------------------------------------------*/
+.quality-assurance .qa-box {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.quality-assurance .qa-box:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.quality-assurance .qa-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.quality-assurance .qa-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quality-assurance .qa-box ul li {
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--default-color);
+}
+
+.quality-assurance .qa-box ul li strong {
+  color: var(--heading-color);
+}
+
+.quality-assurance .qa-metrics {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.quality-assurance .qa-metrics h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.quality-assurance .kpi-card {
+  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), transparent 20%) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--contrast-color);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.quality-assurance .kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quality-assurance .kpi-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.quality-assurance .kpi-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.quality-assurance .kpi-desc {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive Adjustments
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .corporate-overview .overview-item,
+  .operations .operation-box,
+  .track-record .track-box,
+  .quality-assurance .qa-box {
+    margin-bottom: 20px;
+  }
+
+  .compliance .compliance-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .compliance .compliance-icon {
+    margin: 0 auto;
+  }
+
+  .quality-assurance .kpi-card {
+    margin-bottom: 15px;
+  }
+}
+
 .faq .faq-container .faq-active .faq-content {
   grid-template-rows: 1fr;
   visibility: visible;
