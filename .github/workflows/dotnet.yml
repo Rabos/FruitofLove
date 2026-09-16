@@ -45,11 +45,16 @@ jobs:
           scp -i ~/.ssh/deploy_key FruitofLove.tar.gz $DEPLOY_USER@$DEPLOY_HOST:/tmp/
           
           ssh -i ~/.ssh/deploy_key $DEPLOY_USER@$DEPLOY_HOST << 'EOF'
+            set -e
             cd /var/www/fruitoflove
-            sudo systemctl stop fruitoflove || true
             tar -xzf /tmp/FruitofLove.tar.gz -C /var/www/fruitoflove
-            sudo systemctl start fruitoflove
+            sudo systemctl restart fruitoflove.service
             sleep 2
-            systemctl is-active fruitoflove && echo "✅ FruitofLove deployed!" || echo "⚠️ Check logs"
-            rm /tmp/FruitofLove.tar.gz
+            if systemctl is-active --quiet fruitoflove.service; then
+              echo "✅ FruitofLove deployed!"
+            else
+              echo "❌ Deploy failed"
+              exit 1
+            fi
+            rm -f /tmp/FruitofLove.tar.gz
           EOF
