@@ -48,13 +48,12 @@ jobs:
             set -e
             cd /var/www/fruitoflove
             tar -xzf /tmp/FruitofLove.tar.gz -C /var/www/fruitoflove
-            sudo systemctl restart fruitoflove
+            sudo systemctl restart fruitoflove.service
             sleep 2
-            if systemctl is-active --quiet fruitoflove; then
+            if systemctl is-active --quiet fruitoflove.service; then
               echo "✅ FruitofLove deployed!"
             else
               echo "❌ Deploy failed"
-              journalctl -u fruitoflove -n 30 --no-pager
               exit 1
             fi
             rm -f /tmp/FruitofLove.tar.gz
