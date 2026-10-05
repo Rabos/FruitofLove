@@ -1030,6 +1030,90 @@ section,
   }
 }
 
+/* Medium to large screens (1366px - 1919px - High-end monitors) */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .hero h1 {
+    font-size: 56px;
+    line-height: 66px;
+  }
+
+  .hero p {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+
+  .hero .subtitle {
+    font-size: 20px;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 16px;
+    padding: 14px 35px;
+  }
+}
+
+/* Large screens (1920px and above - Smart TVs, 4K displays) */
+@media (min-width: 1920px) {
+  .hero {
+    min-height: 85vh;
+    padding: 80px 0;
+  }
+
+  .hero h1 {
+    font-size: 72px;
+    line-height: 84px;
+  }
+
+  .hero p {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+
+  .hero .subtitle {
+    font-size: 24px;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 20px;
+    padding: 16px 40px;
+  }
+
+  .hero .btn-watch-video i {
+    font-size: 48px;
+  }
+}
+
+/* Extra large screens (2560px and above - 5K displays) */
+@media (min-width: 2560px) {
+  .hero h1 {
+    font-size: 96px;
+    line-height: 112px;
+  }
+
+  .hero p {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .hero .subtitle {
+    font-size: 32px;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 24px;
+    padding: 20px 50px;
+  }
+
+  .hero .btn-watch-video i {
+    font-size: 64px;
+  }
+}
+
 @keyframes up-down {
   0% {
     transform: translateY(10px);
