@@ -2612,7 +2612,7 @@ section:nth-child(odd):nth-child(n+5),
 /* Green accent underline for headings */
 .section-title p {
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
     .section-title p::after {
