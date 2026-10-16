@@ -19,20 +19,27 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-    --background-color: #f0f7f4; /* Background color for the entire website, including individual sections */
-    --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-    --heading-color: #222222; /* Color for headings, subheadings and title throughout the website */
-    --accent-color: #218035; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+    --background-color: #218035; /* Background color for the entire website, including individual sections */
+    --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #ffd54f; /* Accent color used on the green background for buttons, links, and other elements that need to stand out */
+    --surface-color: #1a6a2c; /* The surface color is used as a background of boxed elements within sections that sit directly on the green background */
+    --contrast-color: #14391d; /* Contrast color for text, ensuring readability against the accent color */
     --green-light: #e8f5f2; /* Light green shade for alternating sections */
     --green-dark: #d4f0eb; /* Slightly darker green shade */
+
+    /* Colors used inside white cards (see "Light cards on green background" at the end of this file) */
+    --card-background-color: #ffffff;
+    --card-default-color: #444444;
+    --card-heading-color: #222222;
+    --card-accent-color: #218035;
+    --card-contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-    --nav-color: #222222; /* The default color of the main navmenu links */
-    --nav-hover-color: #218035; /* Applied to main navmenu links when they are hovered over or active */
+    --nav-color: #ffffff; /* The default color of the main navmenu links */
+    --nav-hover-color: #ffd54f; /* Applied to main navmenu links when they are hovered over or active */
     --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
     --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
     --nav-dropdown-color: #222222; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -42,8 +49,8 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-    --background-color: #ffffff;
-    --surface-color: #ffffff;
+    --background-color: #218035;
+    --surface-color: #1a6a2c;
 }
 
 .dark-background {
@@ -78,13 +85,10 @@
 
     /* Alternating Green Shades for Sections */
     section:nth-child(odd),
-    .section:nth-child(odd) {
-        --background-color: #f0f7f4;
-    }
-
+    .section:nth-child(odd),
     section:nth-child(even),
     .section:nth-child(even) {
-        --background-color: #e8f5f2;
+        --background-color: #218035;
     }
 
 /* Smooth scroll */
@@ -2545,42 +2549,16 @@ section::after {
     z-index: 2;
 }
 
-/* Enhanced section backgrounds with subtle gradients */
-section:nth-child(1),
-.section:nth-child(1) {
-    background: linear-gradient(180deg, #f0f7f4 0%, #e8f5f2 100%);
+/* Enhanced section backgrounds: every section uses the site green */
+section,
+.section {
+    background: var(--background-color);
 }
 
-section:nth-child(2),
-.section:nth-child(2) {
-    background: linear-gradient(180deg, #e8f5f2 0%, #f0f7f4 100%);
-}
-
-section:nth-child(3),
-.section:nth-child(3) {
-    background: linear-gradient(180deg, #f0f7f4 0%, #e8f5f2 100%);
-}
-
-section:nth-child(4),
-.section:nth-child(4) {
-    background: linear-gradient(180deg, #e8f5f2 0%, #f0f7f4 100%);
-}
-
-section:nth-child(n+5),
-.section:nth-child(n+5) {
-    background: linear-gradient(180deg, #f0f7f4 0%, #e8f5f2 100%);
-}
-
-section:nth-child(odd):nth-child(n+5),
-.section:nth-child(odd):nth-child(n+5) {
-    background: linear-gradient(180deg, #e8f5f2 0%, #f0f7f4 100%);
-}
-
-/* Light background override - pristine white */
+/* Keep the same green on sections flagged as light-background */
 .light-background {
-    background: #ffffff !important;
+    background: var(--background-color) !important;
 }
-
 /* Card styling with green accent borders */
 .overview-item,
 .objective-card,
@@ -2626,3 +2604,131 @@ section:nth-child(odd):nth-child(n+5),
         background: linear-gradient(90deg, var(--accent-color), transparent);
         opacity: 0.6;
     }
+
+/*--------------------------------------------------------------
+# Green (#218035) page background overrides
+# Text placed directly on the green is light; boxed content uses white
+# cards that restore the dark text and green accent colors.
+--------------------------------------------------------------*/
+html {
+    background-color: #218035;
+}
+
+/* Light cards on green background */
+.overview-item,
+.objective-card,
+.operation-box,
+.compliance-item,
+.track-box,
+.qa-box,
+.qa-metrics,
+.service-item,
+.value-item {
+    --surface-color: var(--card-background-color);
+    --default-color: var(--card-default-color);
+    --heading-color: var(--card-heading-color);
+    --accent-color: var(--card-accent-color);
+    --contrast-color: var(--card-contrast-color);
+    color: var(--card-default-color);
+}
+
+/* The mobile menu is a white panel */
+@media (max-width: 1199px) {
+    .navmenu ul {
+        --accent-color: var(--card-accent-color);
+        --contrast-color: var(--card-contrast-color);
+    }
+}
+
+/* Header */
+.header .logo img {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+@media (min-width: 1200px) {
+    .navmenu li:hover > a,
+    .navmenu .active,
+    .navmenu .active:focus {
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+}
+
+/* Section titles */
+.section-title h2 {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: #ffffff;
+}
+
+/* Hero */
+.hero h1,
+.hero p {
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.hero h1 span {
+    color: var(--accent-color);
+}
+
+.hero .btn-get-started {
+    text-shadow: none;
+    font-weight: 600;
+}
+
+.carousel-control {
+    background: rgba(20, 57, 29, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+    .carousel-control:hover {
+        background: rgba(20, 57, 29, 0.95);
+    }
+
+/* Stats */
+.stats .stats-item {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Partner logos have light-theme artwork, so keep them on a white strip */
+.clients .swiper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+    .footer .footer-links ul a,
+    .footer .social-links a {
+        color: #ffffff;
+    }
+
+        .footer .footer-links ul a:hover,
+        .footer .social-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+/* Visible keyboard focus on both the green background and the white cards */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Bootstrap defaults used by the Error/Privacy pages */
+.text-danger {
+    color: #fff0ee !important;
+}
+
+code {
+    color: var(--accent-color);
+}
