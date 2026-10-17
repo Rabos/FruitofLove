@@ -21,41 +21,4 @@ body {
   margin-bottom: 60px;
 }
 
-/* Hero title styling - scales on all devices including smart TVs */
-.hero-title {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 20px 0;
-}
 
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 2.8rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-}
-
-@media (min-width: 1440px) {
-    .hero-title {
-        font-size: 4.2rem;
-    }
-}
-
-@media (min-width: 1920px) {
-    .hero-title {
-        font-size: 5rem;
-    }
-}
-
-/* Extra large displays (smart TVs, 4K displays) */
-@media (min-width: 2560px) {
-    .hero-title {
-        font-size: 6.5rem;
-    }
-}
